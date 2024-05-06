@@ -8,15 +8,13 @@ on:
       - 'src/**/*'
       - '.github/workflows/deploy.yaml'
 
-env:
-  BUCKET_PATH: theme/en/black-highlighter
-
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: 
+        
 
       - name: Install Bun
         uses: oven-sh/setup-bun@v1
@@ -30,29 +28,3 @@ jobs:
         with:
           branch: gh-pages
           folder: dist
-
-      - name: Clean up for S3
-        run: make clean-up-s3
-
-      - name: Deploy (S3)
-        uses: emmiegit/s3-sync-action@main
-        if: ${{ github.ref == 'refs/heads/master' }}
-        with:
-          args: --delete
-        env:
-          AWS_S3_BUCKET: ${{ vars.AWS_S3_BUCKET }}
-          AWS_REGION: ${{ vars.AWS_REGION }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          SOURCE_DIR: dist
-          DEST_DIR: ${{ env.BUCKET_PATH }}
-
-      - name: Invalidate CloudFront
-        uses: chetan/invalidate-cloudfront-action@v2
-        if: ${{ github.ref == 'refs/heads/master' }}
-        env:
-          DISTRIBUTION: ${{ secrets.CF_DISTRIBUTION }}
-          PATHS: /${{ env.BUCKET_PATH }}
-          AWS_REGION: ${{ vars.AWS_REGION }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

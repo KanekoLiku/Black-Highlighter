@@ -2,11 +2,11 @@
 
 ### What is this?
 
-A tool to test BHL on any SCP-Wiki page. Also includes the option to inject CSS to test themes as well.
+A tool to test BHL (Localaized for JP) on any SCP-Wiki page. Also includes the option to inject CSS to test themes as well.
 
 ### How to Use
 
-Access the Test Page Here: https://nu-scptheme.github.io/Black-Highlighter/scp-test-page.html?url=
+Access the Test Page Here: https://scp-jp.github.io/Black-Highlighter/scp-test-page.html?url=
 
 In order to load a specific SCP-Wiki page, just add `scp-test-page.html?url=page-goes-here` to the end of the url.  
 For example: `scp-test-page.html?url=scp-4792` would load SCP-4792.

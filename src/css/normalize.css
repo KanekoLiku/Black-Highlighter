@@ -487,6 +487,7 @@ body {
 	background-color: inherit;
 	color: inherit;
 	font-size: inherit;
+	font-weight: inherit;
 }
 
 #interwiki body {
@@ -599,6 +600,21 @@ sup {
 	line-height: inherit;
 	text-decoration: inherit;
 	text-shadow: inherit;
+}
+
+#header h1 a::before {
+	content: inherit;
+	font-size: inherit;
+}
+
+#header h1 a::after {
+	content: inherit;
+	vertical-align: inherit;
+}
+
+#header h1 a span {
+	font-size: inherit;
+	letter-spacing: inherit;
 }
 
 #header h2 span {
@@ -775,6 +791,7 @@ sup {
 
 #side-bar .menu-item img,
 #interwiki .menu-item img {
+	display: inherit;
 	position: inherit;
 	bottom: inherit;
 	width: inherit;
@@ -1080,6 +1097,7 @@ div.page-rate-widget-box .rate-points {
 	border-right: inherit;
 	border-radius: inherit;
 	background-color: inherit;
+	line-height: inherit;
 }
 
 .page-rate-widget-box .rateup,
@@ -2275,6 +2293,13 @@ table.page-history td.optionstd a {
 .inline-diff del {
 	background-color: unset;
 	white-space: unset;
+}
+
+.inline-diff ins:first-of-type::before,
+.inline-diff del:first-of-type::before,
+.inline-diff br + ins::before,
+.inline-diff br + del::before {
+	content: inherit;
 }
 
 .Differences {

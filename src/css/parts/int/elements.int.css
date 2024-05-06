@@ -4,73 +4,8 @@
 /* Styling specific to Int Branches' Elements
 
 /* ===DIRECTORY===
-	1.  =CZECH BRANCH
-	2.  =FRENCH BRANCH
-	3.  =GERMAN BRANCH
-	4.  =GREEK BRANCH
-	5.  =ITALIAN BRANCH
-	6.  =JAPANESE BRANCH
-	7.  =KOREAN BRANCH
-	8.  =POLISH BRANCH
-	9.  =PORTUGESE BRANCH
-	10. =RUSSIAN BRANCH
-	11. =SIMPLIFIED CHINESE BRANCH
-	12. =SPANISH BRANCH
-	13. =THAI BRANCH
-	14. =TRADITIONAL CHINESE BRANCH
-	15. =UKRAINIAN BRANCH
-	16. =VIETNAMESE BRANCH
+	1.  =JAPANESE BRANCH
 */
-
-/* ===CZECH BRANCH=== */
-
-:where(:lang(cs)) {
-	:root& {
-		--text-creditview-back: "Zpět";
-		--text-tableofcontents: "Obsah";
-	}
-}
-
-/* ===FRENCH BRANCH=== */
-
-:where(:lang(fr)) {
-	:root& {
-		--text-creditview-back: "Retour";
-		--text-tableofcontents: "Sommaire";
-	}
-}
-
-/* ===GERMAN BRANCH=== */
-
-:where(:lang(de)) {
-	:root& {
-		--text-creditview-back: "Zurück";
-		--text-tableofcontents: "Inhalt";
-	}
-
-	.page-rate-widget-box,
-	#page-content .rate-box-with-credit-button {
-		background-color: rgb(var(--rating-module-bg-color)) !important;
-	}
-}
-
-/* ===GREEK BRANCH=== */
-
-:where(:lang(el)) {
-	:root& {
-		--text-creditview-back: "Πίσω";
-		--text-tableofcontents: "Πίνακας περιεχομένων";
-	}
-}
-
-/* ===ITALIAN BRANCH=== */
-
-:where(:lang(it)) {
-	:root& {
-		--text-creditview-back: "Indietro";
-		--text-tableofcontents: "Indice dei contenuti";
-	}
-}
 
 /* ===JAPANESE BRANCH=== */
 
@@ -79,76 +14,249 @@
 		--text-creditview-back: "閉じる";
 		--text-tableofcontents: "目次";
 	}
-}
 
-/* ===KOREAN BRANCH=== */
-
-:where(:lang(ko)) {
-	:root& {
-		--text-creditview-back: "뒤로";
-		--text-tableofcontents: "목차";
-	}
-}
-
-/* ===POLISH BRANCH=== */
-
-:where(:lang(pl)) {
-	:root& {
-		--text-creditview-back: "Powrót";
-		--text-tableofcontents: "Spis Treści";
-	}
-}
-
-/* ===PORTUGESE BRANCH=== */
-
-:where(:lang(pt-br)) {
-	:root& {
-		--text-creditview-back: "Voltar";
-		--text-tableofcontents: "Índice";
+	div.rate-box-with-credit-button div.page-rate-widget-box,
+	div.page-rate-widget-box {
+		.rate-points {
+			.number {
+				font-size: 1.15em;
+			}
+		}
 	}
 
-	& .INT-box > a > img {
-		width: 100%;
+	/* ===CREDIT MODULE FOR JP=== */
+	#page-content .creditRate.creditModule {
+
+		& .rate-box-with-credit-button {
+			align-items: inherit;
+			border: none;
+			flex-direction: inherit;
+			justify-content: inherit;
+			box-shadow: none;
+			height: inherit;
+			min-width: inherit;
+			overflow: inherit;
+
+			&>.page-rate-widget-box {
+				background-color: rgb(var(--rating-module-bg-color));
+				border: 0.0625rem solid rgba(var(--swatch-border-color), .15);
+				border-bottom-width: 0;
+				box-shadow: 0 0.125rem 0 0 rgb(var(--rating-module-bottom-border-color));
+			}
+		}
 	}
-}
 
-/* ===RUSSIAN BRANCH=== */
+	:is(#page-content, #action-area) div.page-rate-widget-box {
 
-/* ===SIMPLIFIED CHINESE BRANCH=== */
+		& .rate-points {
+			display: inline;
+			font-family: var(--UI-font);
+			font-size: 0.85em;
+			font-weight: var(--wght);
+		}
 
-:where(:lang(cn)) {
-	:root& {
-		--text-creditview-back: "返回";
-		--text-tableofcontents: "目录";
+		& span {
+			box-sizing: inherit;
+			display: inline;
+			height: inherit;
+		}
+
+		& .cancel {
+			padding: 0;
+
+			& a {
+				color: transparent;
+				font-family: inherit;
+				font-size: inherit;
+				font-weight: var(--wght);
+				height: 100%;
+				padding: 0;
+
+				&::before {
+					content: " ";
+					font-size: inherit;
+				}
+			}
+		}
+
+		& :is(.rateup, .ratedown) a {
+			box-sizing: inherit;
+			display: block;
+			font-family: inherit;
+			font-size: inherit;
+			font-weight: var(--wght);
+			height: 100%;
+			padding: 0;
+
+			&::before {
+				content: " ";
+				font-size: inherit;
+			}
+		}
 	}
-}
 
-/* ===SPANISH BRANCH=== */
+	#page-content .creditRate.creditModule .rate-box-with-credit-button .creditButton,
+	.creditRate.creditModule .heritage-rating-module~.creditButton {
+		background-color: rgb(var(--rating-module-bg-color));
+		border: 0.0625rem solid rgba(var(--swatch-border-color), .15);
+		border-bottom-width: 0;
+		border-radius: 0;
+		box-shadow: 0 0.125rem 0 0 rgb(var(--rating-module-bottom-border-color));
+		display: block;
+		font-size: inherit;
+		height: var(--rating-module-height);
+		line-height: inherit;
+		margin-left: 0.5em;
+		width: calc(var(--base-font-size) * (21 / 15));
 
-:where(:lang(es)) {
-	:root& {
-		--text-creditview-back: "Volver";
-		--text-tableofcontents: "Tabla de Contenidos";
+		& a {
+			display: flex;
+			background-color: transparent;
+			color: rgb(var(--rating-module-text-color));
+			font-size: inherit;
+			width: 100%;
+			height: 100%;
+
+			&::before {
+				--mask-image: var(--credit-button-mask);
+				content: " ";
+				position: absolute;
+				z-index: 1;
+				top: 0;
+				left: 0;
+				width: calc(var(--base-font-size) * (21 / 15));
+				height: 100%;
+				transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+				background-color: rgb(var(--rating-module-text-color));
+				pointer-events: none;
+				mask: var(--mask-image) center center / calc(var(--rating-module-height) - 0.375em) no-repeat;
+			}
+
+			&::after {
+				--clip-path:
+					polygon(0 100%,
+						100% 115%,
+						100% 100%,
+						0 115%);
+				content: " ";
+				position: absolute;
+				z-index: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+				pointer-events: none;
+				clip-path: var(--clip-path);
+				background-color: rgba(var(--rating-module-text-color), 1);
+			}
+
+			&:is(:hover, :active) {
+
+				&::before {
+					background-color: rgb(var(--rating-module-text-hover-color));
+				}
+
+				&::after {
+					--clip-path:
+						polygon(0 100%,
+							100% 115%,
+							100% 0,
+							0 -15%);
+				}
+
+			}
+
+			&:focus-within {
+
+				&::before {
+					background-color: rgb(var(--rating-module-text-hover-color));
+				}
+
+				&::after {
+					--clip-path:
+						polygon(0 100%,
+							100% 115%,
+							100% 0,
+							0 -15%);
+				}
+
+			}
+		}
 	}
-}
 
-/* ===THAI BRANCH=== */
-
-/* ===TRADITIONAL CHINESE BRANCH=== */
-
-:where(:lang(zh)) {
-	:root& {
-		--text-creditview-back: "返回";
-		--text-tableofcontents: "目录";
+	[id*=u-credit] :is(.creditBottomRate, .modalbox>.Dendo, .modalbox-ratemodule) {
+		position: static;
 	}
-}
 
-/* ===UKRAINIAN BRANCH=== */
+	.creditRate.creditModule~[id*="u-credit"] {
 
-/* ===VIETNAMESE BRANCH=== */
+		& .modalcontainer {
+			display: block;
+			height: -webkit-fit-content;
+			height: -moz-fit-content;
+			height: fit-content;
+			margin: auto;
+			min-width: inherit;
+			top: 0;
+			translate: unset;
+			width: -webkit-fit-content;
+			width: -moz-fit-content;
+			width: fit-content;
+		}
 
-:where(:lang(vi)) {
-	:root& {
-		--text-tableofcontents: "Mục Lục";
+		& div.modalbox {
+			max-width: 30rem !important;
+			min-height: -webkit-fit-content;
+			min-height: -moz-fit-content;
+			min-height: fit-content;
+
+			& .modalbox-title {
+				border-radius: 0;
+			}
+
+			& .credit {
+				&.otherwise {
+					height: -webkit-max-content;
+					height: -moz-max-content;
+					height: max-content;
+					overflow-y: auto;
+				}
+			}
+		}
+
+		& div.credit-back {
+			margin: .25em auto;
+			width: -webkit-fit-content;
+			width: -moz-fit-content;
+			width: fit-content;
+
+			& iframe {
+				opacity: 0;
+			}
+
+			&::before {
+				content: "クレジット";
+				position: static;
+			}
+		}
+
+		& div.creditBottomRate {
+			box-shadow: unset;
+		}
+
+		& .credit-license a.cc {
+			color: rgb(var(--swatch-text-general));
+			font-size: 2em;
+			margin-right: 1rem;
+		}
+	}
+
+	/* Award Modal For JP */
+	div[class*="award"]~#u-credit-otherwise {
+		& .modalbox {
+			background: radial-gradient(rgba(255, 219, 90, .95) 0, rgb(255, 255, 255) 100%) !important;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+		}
 	}
 }

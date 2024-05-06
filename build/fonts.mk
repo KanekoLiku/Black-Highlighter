@@ -1,5 +1,5 @@
 # Variables
-FONTS_COPY_SOURCES := $(wildcard src/fonts/* src/fonts/int/chinese-simplified/* src/fonts/int/chinese-traditional/* src/fonts/int/japanese/* src/fonts/int/korean/* src/fonts/int/thai-vietnamese/*)
+FONTS_COPY_SOURCES := $(wildcard src/fonts/* src/fonts/int/japanese/*)
 FONTS_COPY_OUTPUTS := $(patsubst src/fonts/%,dist/fonts/%,$(FONTS_COPY_SOURCES))
 
 # Fonts to copy

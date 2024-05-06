@@ -112,7 +112,7 @@
 	}
 
 	#side-bar & {
-		/* Social Media Icons */
+		/* Social Media Icons 
 
 		&.media {
 			& a {
@@ -200,6 +200,7 @@
 				}
 			}
 		}
+		*/
 
 		/* Forcing default sidebar coloring on any INT branches that still use Background Color */
 
