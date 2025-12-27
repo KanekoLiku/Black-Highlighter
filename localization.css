@@ -1,0 +1,64 @@
+/*
+	Black Highlighter Theme (Localization for JP)
+	[2025 Wikidot Theme]
+	Maintained by the JP SCP Wiki Technical Team, based on:
+
+	Black Highlighter Theme
+	[2019 Wikidot Theme]
+	Created by the Black Highlighter Team
+*/
+
+:root {
+	/* ===HEADER ELEMENTS=== */
+	--logo-image: url("../../img/logo.svg");
+	--header-title: "SCP財団";
+	--header-subtitle: "確保、収容、保護";
+
+	/* ===TYPEFACES=== */
+	--body-font: Inter, "BIZ UDPGothic", "M Plus 1p", sans-serif;
+	--UI-font: PTRootUI, sans-serif;
+	--header-font: Inter, "M Plus 1p", sans-serif;
+	--title-font: var(--body-font);
+	--mono-font: Recursive, monospace;
+}
+
+:root {
+	/* Found in Wikidot Structure */
+	--text-tags: "タグ\0021b4";
+	--text-editor-desc: "変更の要約:";
+	--text-pagehistory-flags: "フラグ";
+	--text-pagehistory-actions: "アクション";
+	--text-pagehistory-date: "日付";
+	--text-sitetools: "サイトツール";
+
+	/* Found in Elements */
+	--text-creditview-back: "戻る";
+	--text-tableofcontents: "目次";
+
+	/* Found in Header */
+	--text-messages: "メッセージ";
+}
+
+#header h1 a::after {
+	display: none;
+}
+
+#login-status #account-options {
+	width: 12em;
+}
+
+#header div#top-bar {
+	margin: var(--header-height-on-desktop) 0 0 0;
+}
+
+#header div[class*=top-bar] > ul > li {
+	flex-basis: auto;
+}
+
+div[id*=page-options-bottom]:not(:is(.page-rate-widget-box,#search-top-box-form)) > a.btn {
+	flex-basis: auto;
+}
+
+#odialog-container .content > h1 ~ table {
+	grid-auto-rows: .75fr;
+}

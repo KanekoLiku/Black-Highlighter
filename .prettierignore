@@ -1,0 +1,21 @@
+# Build Files
+Makefile
+build
+*.map
+
+# dist files
+dist/
+
+# Non-web
+*.md
+*.patch
+
+# NPM
+node_modules/
+bun.lockb
+
+# Misc
+.DS_Store
+.*.swp
+*.bak
+.vscode/

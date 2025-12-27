@@ -1,0 +1,14 @@
+# Artifacts
+dist/
+*.map
+
+# NPM
+node_modules/
+package-lock.json
+
+# Misc
+.DS_Store
+.*.swp
+*.bak
+.vscode/
+.idea/
